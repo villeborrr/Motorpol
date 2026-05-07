@@ -2,7 +2,8 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Kortspel – Bil, Hus & MC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorpol</title>
 
     <style>
         body {
@@ -13,7 +14,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
             background: white;
             padding: 25px;
@@ -21,10 +22,30 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
+        /* TOPPEN MED KNAPP */
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .play-button {
+            background: #6c8cff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .play-button:hover {
+            background: #5673ff;
+        }
+
         h1 {
             text-align: center;
             color: #222;
-            margin-bottom: 20px;
+            margin-top: 10px;
         }
 
         h2 {
@@ -38,25 +59,10 @@
 
         .highlight {
             background: #eef3ff;
-            padding: 12px;
+            padding: 15px;
             border-radius: 8px;
             border-left: 5px solid #6c8cff;
             margin-top: 10px;
-        }
-
-        button {
-            padding: 10px 15px;
-            border: none;
-            background: #6c8cff;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background: #5673ff;
         }
     </style>
 </head>
@@ -64,14 +70,18 @@
 <body>
 
 <div class="container">
-    <h1>Motorpol</h1>
+    <div class="top-bar">
+        <a class="play-button" href="spel.html">Gå till spelet</a>
+    </div>
+
+    <h1>Kortspel – Bil, Hus & MC</h1>
 
     <h2>Grundidé</h2>
     <div class="highlight">
         <p>
             Spelet består av tre högar med kort: bil, hus och mc/mopeder.
-            När du kastar tärningen kan du hamna på ett kort eller på rutor som
-            kronofogden, flygande besiktning eller service.
+            När du kastar tärningen kan du hamna på kort eller på händelser
+            som kronofogden, flygande besiktning eller service. Om du hamnar på kort ska du gissa hur mycket fordonet eller fastigheten är värd. Om du hamnar på kronofogden, flygande besiktning eller service ska du betala en avgift. 
         </p>
     </div>
 
@@ -85,15 +95,13 @@
 
     <h2>Pengar & Kort</h2>
     <div class="highlight">
-        <p>Du tjänar pengar genom att sälja dina fordon och hus. Värdet står på kortet.</p>
+        <p>Du tjänar pengar genom att sälja dina fordon och hus.</p>
 
         <ul>
-            <li>Dyrare bilar: 50000 kr och uppåt → 2000 kr</li>
-            <li>Billigare bilar: under 50000 kr → 500 kr</li>
+            <li>Dyrare bilar: 50 000 kr och uppåt → 2000 kr</li>
+            <li>Billigare bilar: under 50 000 kr → 500 kr</li>
             <li>Dyrare hus: 4 miljoner och uppåt → 2000 kr</li>
             <li>Billigare hus: under 4 miljoner → 500 kr</li>
-            <li>Dyrare MC/mopeder: 20000 kr och uppåt → 2000 kr</li>
-            <li>Billigare MC/mopeder: under 20000 kr → 500 kr</li>
         </ul>
     </div>
 
@@ -101,24 +109,11 @@
     <div class="highlight">
         <p>
             Spelet avslutas när en spelare inte längre kan betala sina skulder
-            (till exempel kronofogden eller besiktning), eller när alla kort är slut.
+            eller när alla kort är slut.
         </p>
     </div>
 
-    <h2>Om du inte har tärning</h2>
-    <div class="highlight">
-        <button onclick="rollDice()">Kasta tärning 🎲</button>
-        <p id="diceResult"></p>
-    </div>
-
 </div>
-
-<script>
-function rollDice() {
-    let roll = Math.floor(Math.random() * 6) + 1;
-    document.getElementById("diceResult").innerText = "Du slog: " + roll;
-}
-</script>
 
 </body>
 </html>
