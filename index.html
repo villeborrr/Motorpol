@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Kortspel – Bil, Hus & MC</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9e9e9, #f4f4f4);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 25px;
+        }
+
+        p, ul {
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: #eef3ff;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 5px solid #6c8cff;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #6c8cff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #5673ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Motorpol</h1>
+
+    <h2>Grundidé</h2>
+    <div class="highlight">
+        <p>
+            Spelet består av tre högar med kort: bil, hus och mc/mopeder.
+            När du kastar tärningen kan du hamna på ett kort eller på rutor som
+            kronofogden, flygande besiktning eller service.
+        </p>
+    </div>
+
+    <h2>Start</h2>
+    <div class="highlight">
+        <p>Startkapital: 1000 kr</p>
+        <p>Service: 250 kr</p>
+        <p>Kronofogden: 750 kr</p>
+        <p>Flygande besiktning: 500 kr</p>
+    </div>
+
+    <h2>Pengar & Kort</h2>
+    <div class="highlight">
+        <p>Du tjänar pengar genom att sälja dina fordon och hus. Värdet står på kortet.</p>
+
+        <ul>
+            <li>Dyrare bilar: 50000 kr och uppåt → 2000 kr</li>
+            <li>Billigare bilar: under 50000 kr → 500 kr</li>
+            <li>Dyrare hus: 4 miljoner och uppåt → 2000 kr</li>
+            <li>Billigare hus: under 4 miljoner → 500 kr</li>
+            <li>Dyrare MC/mopeder: 20000 kr och uppåt → 2000 kr</li>
+            <li>Billigare MC/mopeder: under 20000 kr → 500 kr</li>
+        </ul>
+    </div>
+
+    <h2>Spelets slut</h2>
+    <div class="highlight">
+        <p>
+            Spelet avslutas när en spelare inte längre kan betala sina skulder
+            (till exempel kronofogden eller besiktning), eller när alla kort är slut.
+        </p>
+    </div>
+
+    <h2>Om du inte har tärning</h2>
+    <div class="highlight">
+        <button onclick="rollDice()">Kasta tärning 🎲</button>
+        <p id="diceResult"></p>
+    </div>
+
+</div>
+
+<script>
+function rollDice() {
+    let roll = Math.floor(Math.random() * 6) + 1;
+    document.getElementById("diceResult").innerText = "Du slog: " + roll;
+}
+</script>
+
+</body>
+</html>
