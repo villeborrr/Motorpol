@@ -21,8 +21,6 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-
-        /* TOPP BAR */
         .top-bar {
             display: flex;
             justify-content: flex-end;
@@ -46,6 +44,11 @@
             text-align: center;
             color: #222;
             margin-top: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 25px;
         }
 
         .money {
@@ -75,7 +78,8 @@
             background: #eef3ff;
             padding: 15px;
             border-radius: 8px;
-            margin-top: 20px;
+            margin-top: 10px;
+            border-left: 5px solid #6c8cff;
         }
     </style>
 </head>
@@ -83,33 +87,36 @@
 <body>
 
 <div class="container">
+
     <div class="top-bar">
         <a class="back-button" href="index.html">← Gå tillbaka</a>
     </div>
 
-    <h1>Spelsida 🎮</h1>
+    <h1>Spelsida</h1>
 
     <div class="money">
         Pengar: <span id="money">1000</span> kr
     </div>
 
-    <div class="box">
-        <h2>Betala skulder</h2>
+    <h2>Betala skulder</h2>
 
+    <div class="box">
         <button onclick="service()">Service -250 kr</button>
         <button onclick="kronofogden()">Kronofogden -750 kr</button>
         <button onclick="flygandeBes()">Flygande Bes -500 kr</button>
     </div>
 
-    <div class="box">
-        <h2>Sälj fordon</h2>
+    <h2>Sälj fordon</h2>
 
-        <button onclick="sellBigCar()">Dyr bil +2000 kr</button>
-        <button onclick="sellCheapCar()">Billig bil +500 kr</button>
+    <div class="box">
+        <button onclick="sellBigCar()">Dyr bil/mc och mopeder +2000 kr</button>
+        <button onclick="sellCheapCar()">Billig bil/mc och mopeder +500 kr</button>
 
         <button onclick="sellBigHouse()">Dyrt hus +2000 kr</button>
         <button onclick="sellCheapHouse()">Billigt hus +500 kr</button>
     </div>
+
+    <h2>Händelse</h2>
 
     <div class="box">
         <p id="status"></p>
@@ -149,13 +156,13 @@ function flygandeBes() {
 
 function sellBigCar() {
     money += 2000;
-    document.getElementById("status").innerText = "Du sålde en dyr bil.";
+    document.getElementById("status").innerText = "Du sålde en dyr bil/mc/moped.";
     updateMoney();
 }
 
 function sellCheapCar() {
     money += 500;
-    document.getElementById("status").innerText = "Du sålde en billig bil.";
+    document.getElementById("status").innerText = "Du sålde en billig bil/mc/moped.";
     updateMoney();
 }
 
